@@ -48,13 +48,13 @@ d = {
 	"opt_into_one_tap": "false"
 }
 req_sign = requests.post(url, headers=h, data=d)
-if 'userId' in req_sign.text:
-	co = req_sign.cookies
-	coo = co.get_dict()
-	csrf = coo['csrftoken']
-	cookie = f"csrftoken={coo['csrftoken']};mid={coo['mid']}];ig_did={coo['ig_did']};ig_nrcb={coo['ig_nrcb']};"
-else:
-	print("false information")
+#if 'userId' in req_sign.text:
+co = req_sign.cookies
+coo = co.get_dict()
+csrf = coo['csrftoken']
+cookie = f"csrftoken={coo['csrftoken']};mid={coo['mid']}];ig_did={coo['ig_did']};ig_nrcb={coo['ig_nrcb']};"
+#else:
+#	print("false information")
 he = {
 	"Accept": "*/*",
 	"Accept-Language": "en-US,en;q=0.5",
